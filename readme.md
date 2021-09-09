@@ -8,7 +8,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5834a862-a09c-4eff-8bc8-b37f0119064b/deploy-status)](https://app.netlify.com/sites/my-mealdb2-app/deploys)
 
-This application is a UI for [The MealDB API](https://www.themealdb.com)
+This application is a UI for [The MealDB API](https://www.themealdb.com/api.php)
 
 - [Live Demo](https://my-mealdb2-app.netlify.app)
 
