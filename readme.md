@@ -6,11 +6,11 @@
 
 # MealDB App
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f3461201-5b5c-4bff-b8cf-0d8bbd3982bc/deploy-status)](https://app.netlify.com/sites/my-mealdb-app/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5834a862-a09c-4eff-8bc8-b37f0119064b/deploy-status)](https://app.netlify.com/sites/my-mealdb2-app/deploys)
 
 This application is a UI for [The MealDB API](https://www.themealdb.com)
 
-- [Live Demo](https://my-mealdb-app.netlify.app/)
+- [Live Demo](https://my-mealdb2-app.netlify.app)
 
 ## Project Specifications
 
