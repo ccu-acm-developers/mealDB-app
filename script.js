@@ -14,6 +14,7 @@ const singleMealEl = document.getElementById('single-meal');
 const getJSON = async function (url, errorMsg = 'Something went wrong') {
   return await fetch(url).then((response) => {
     if (!response.ok) {
+      resultHeading.innerHTML = '<h2> Opps! There has been an error </h2>';
       throw new Error(`${errorMsg} (${response.status})`);
     }
     return response.json();
