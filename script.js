@@ -74,10 +74,9 @@ const searchMeal = async function (e) {
     );
     if (mealData4.meals !== null) mealsArr.push(mealData4);
 
-    //Create heading for result
-    resultHeading.innerHTML = `<h2> Search results for '${term}':</h2>`;
+    // Create heading for result
+    resultHeading.innerHTML = `<h2> Search results for '${term}'</h2>`;
     if (mealsArr.length === 0) {
-      //If no results
       resultHeading.innerHTML = `<p> No search results for '${term}'. Please try again!</p>`;
       mealsEl.innerHTML = '';
       if (term === 'desert')
@@ -87,7 +86,7 @@ const searchMeal = async function (e) {
       // Add the meal data to the DOM
       displayMeals(mealsArr);
     }
-    //Clear text area
+    // Clear text area
     searchBox.value = '';
   } catch (err) {
     alert(err.message);
@@ -132,7 +131,7 @@ const addMealToDOM = function (meal) {
       ${meal.strCategory ? `<p><i>${meal.strArea}</i></p>` : ''}
     </div>
     <div class="main">
-    ${meal.strYoutube ? `<h4>This Recipe Has A YouTube Video </h4>` : ''}
+    ${meal.strYoutube ? `<h4>This Recipe Has A YouTube Video! </h4>` : ''}
     ${
       meal.strYoutube
         ? `<div class="link"><a href=${meal.strYoutube}>YouTube</a></div>`
@@ -204,6 +203,7 @@ const init = async function () {
   console.log(meals);
 };
 init();
+
 ////////////////////
 // EVENT LISTENERS
 
