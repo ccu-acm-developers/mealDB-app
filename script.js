@@ -9,8 +9,6 @@ const singleMealEl = document.getElementById('single-meal');
 
 //////////////
 // FUNCTIONS
-
-// Get JSON
 const getJSON = async function (url, errorMsg = 'Something went wrong') {
   return await fetch(url).then((response) => {
     if (!response.ok) {
@@ -52,39 +50,36 @@ const searchMeal = async function (e) {
   const term = searchBox.value;
   const mealsArr = [];
   try {
-    //Search meal by name
+    // API search meal by name
     const mealData = await getJSON(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
     );
-    console.log(mealData);
     if (mealData.meals !== null) mealsArr.push(mealData);
-    // Search by main ingredient
+    // API search by main ingredient
     const mealData2 = await getJSON(
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${term}`
     );
     if (mealData2.meals !== null) mealsArr.push(mealData2);
-    // Filter by category
+    // API filter by category
     const mealData3 = await getJSON(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${term}`
     );
-    console.log(mealData3);
     if (mealData3.meals !== null) mealsArr.push(mealData3);
-    // Filter by area
+    // API filter by area
     const mealData4 = await getJSON(
       `https://www.themealdb.com/api/json/v1/1/filter.php?a=${term}`
     );
     if (mealData4.meals !== null) mealsArr.push(mealData4);
 
-    // Create heading for result
     resultHeading.innerHTML = `<h2> Search results for '${term}'</h2>`;
     if (mealsArr.length === 0) {
       resultHeading.innerHTML = `<p> No search results for '${term}'. Please try again!</p>`;
       mealsEl.innerHTML = '';
       if (term === 'desert')
-        resultHeading.innerHTML = `<p> No search results for '${term}'. Try "dessert"`;
+        resultHeading.innerHTML = `<p> No search results for '${term}'. Try "dessert"!`;
       return;
     } else {
-      // Add the meal data to the DOM
+      // Add meal data to DOM
       displayMeals(mealsArr);
     }
     searchBox.value = '';
@@ -106,7 +101,7 @@ const addMealToDOM = function (meal) {
   const ingredients = [];
   const measurements = [];
   const recipeData = [];
-  //the API has data for recipe in a goofy way
+  // (API has data in a goofy way)
   for (let key in meal) {
     let word = key;
     if (word.includes('strIngredient') && meal[key] !== '') {
@@ -120,7 +115,7 @@ const addMealToDOM = function (meal) {
     let j = new recipeItem(ingredients[i], measurements[i]);
     recipeData.push(j);
   }
-  // Add meal data to the DOM
+  // Add meal data to DOM
   singleMealEl.innerHTML = `
   <div class="single-meal">
     <h1>${meal.strMeal}</h1>
@@ -148,12 +143,12 @@ const addMealToDOM = function (meal) {
       .join('')}
     </ul>
   </div>`;
-  //Scroll to meal
+
   singleMealEl.scrollIntoView({ behavior: 'smooth' });
 };
 
 //Finds y value of given object
-function findPos(singleMealEl) {
+function findPos() {
   var curtop = 0;
   if (obj.offsetParent) {
     do {
@@ -198,13 +193,11 @@ const init = async function () {
   resultHeading.innerHTML = `<h2> Search results for '${randomCuisine}'</h2>`;
   const meals = [mealData];
   displayMeals(meals);
-  console.log(meals);
 };
 init();
 
 ////////////////////
 // EVENT LISTENERS
-
 // Submit Form Click
 submitBtn.addEventListener('submit', searchMeal);
 // Random Meal Click
@@ -213,7 +206,6 @@ randomBtn.addEventListener('click', getRandomMeal);
 mealsEl.addEventListener('click', (e) => {
   let path = e.path || (e.composedPath && e.composedPath());
   const mealInfo = path.find((item) => {
-    // console.log('ITEM', item);
     if (item.classList) {
       return item.classList.contains('meal-info');
     } else {
