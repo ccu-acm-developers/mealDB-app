@@ -87,7 +87,6 @@ const searchMeal = async function (e) {
       // Add the meal data to the DOM
       displayMeals(mealsArr);
     }
-    // Clear text area
     searchBox.value = '';
   } catch (err) {
     alert(err.message);
@@ -104,7 +103,6 @@ class recipeItem {
 
 // Add the selected meal to the DOM
 const addMealToDOM = function (meal) {
-  //Get recipe data from the object
   const ingredients = [];
   const measurements = [];
   const recipeData = [];
@@ -177,7 +175,6 @@ const getMealByID = async function (mealID) {
 
 // Fetch random meal
 const getRandomMeal = async function () {
-  // Clear meals & heading
   mealsEl.innerHTML = '';
   resultHeading.innerHTML = '';
 
