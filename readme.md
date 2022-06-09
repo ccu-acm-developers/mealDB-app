@@ -14,7 +14,7 @@ This application is a UI for [The MealDB API](https://www.themealdb.com/api.php)
 
 ## Project Specifications
 
-- Developed in Vanilla JS
+- Developed in Vanilla JS (pure JavaScript, HTML, CSS) no libraries or frameworks
 - UI to search and access recipes from the API
 - Display meals in the DOM with image and hover effect
 - Click on meal to see the details for a recipe
