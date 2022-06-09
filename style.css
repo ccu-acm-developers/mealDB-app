@@ -152,7 +152,7 @@ input:focus {
 }
 
 .link {
-  background-color: #fff;
+  background-color: #ff0000;
   border: 1px solid #cdcdcd;
   font-size: 19px;
   font-weight: bold;
@@ -167,12 +167,12 @@ input:focus {
 }
 
 .link:hover {
-  background-color: #dfdfdf;
+  background-color: #e60026;
   /* font-size: 20px; */
 }
 
 .link a {
-  color: #4c6ca0;
+  color: #fff;
   text-decoration: none;
 }
 
