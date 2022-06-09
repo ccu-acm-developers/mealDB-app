@@ -7,8 +7,6 @@ const resultHeading = document.getElementById('result-heading');
 const mealsEl = document.getElementById('meals');
 const singleMealEl = document.getElementById('single-meal');
 
-//////////////
-// FUNCTIONS
 const getJSON = async function (url, errorMsg = 'Something went wrong') {
   return await fetch(url).then((response) => {
     if (!response.ok) {
@@ -125,7 +123,7 @@ const addMealToDOM = function (meal) {
       ${meal.strCategory ? `<p><i>${meal.strArea}</i></p>` : ''}
     </div>
     <div class="main">
-    ${meal.strYoutube ? `<h4>This Recipe Has A YouTube Video! </h4>` : ''}
+    ${meal.strYoutube ? `<h3>This Recipe Has A YouTube Video! </h4>` : ''}
     ${
       meal.strYoutube
         ? `<div class="link"><a href=${meal.strYoutube}>YouTube</a></div>`
@@ -196,8 +194,8 @@ const init = async function () {
 };
 init();
 
-////////////////////
-// EVENT LISTENERS
+// EVENT_LISTENERS
+
 // Submit Form Click
 submitBtn.addEventListener('submit', searchMeal);
 // Random Meal Click
